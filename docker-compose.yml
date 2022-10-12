@@ -1,0 +1,10 @@
+version: '3'
+services:
+  redis-server:
+    image: 'redis'
+  node-app:
+    restart: always  #always restart container if node app crashed
+    build: .  #take docker file from root and build image
+    ports:
+      - "3082:8080"   #your machine/browser port : in container/docker which port ur app runnin
+      
